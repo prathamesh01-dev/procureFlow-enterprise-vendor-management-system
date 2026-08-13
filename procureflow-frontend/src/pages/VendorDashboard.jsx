@@ -47,7 +47,7 @@ const handleSubmit = async (e) => {
     console.log("QUOTATION DATA:", quotationData);
 
     await axios.post(
-      "http://localhost:5000/api/quotations",
+      "https://procureflow-enterprise-vendor-management-e2a6.onrender.com//api/quotations",
       quotationData
     );
 

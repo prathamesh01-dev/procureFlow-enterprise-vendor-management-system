@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-const API_URL = "http://localhost:5000/api/quotations";
+const API_URL = "https://procureflow-enterprise-vendor-management-e2a6.onrender.com//api/quotations";
 
 function Quotations() {
   const [quotations, setQuotations] = useState([]);
@@ -58,7 +58,7 @@ function Quotations() {
   const generatePurchaseOrder = async (vendor) => {
   try {
     await axios.post(
-      "http://localhost:5000/api/purchase-orders/generate-from-quotation",
+      "https://procureflow-enterprise-vendor-management-e2a6.onrender.com//api/purchase-orders/generate-from-quotation",
       {
         vendorId: vendor.vendorId,
         vendorName: vendor.vendorName,

@@ -19,13 +19,13 @@ function Reports() {
   const fetchData = async () => {
     try {
       const vendorRes = await axios.get(
-        'http://localhost:5000/api/vendors/stats'
+        'https://procureflow-enterprise-vendor-management-e2a6.onrender.com//api/vendors/stats'
       );
       const orderRes = await axios.get(
-        'http://localhost:5000/api/purchase-orders'
+        'https://procureflow-enterprise-vendor-management-e2a6.onrender.com//api/purchase-orders'
       );
       const invoiceRes = await axios.get(
-        'http://localhost:5000/api/invoices'
+        'https://procureflow-enterprise-vendor-management-e2a6.onrender.com//api/invoices'
       );
 
       setVendorStats(vendorRes.data);

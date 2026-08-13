@@ -4,7 +4,7 @@ import { Search, Plus, Filter, Eye, Pencil, Trash2, X } from 'lucide-react';
 import jsPDF from 'jspdf';
 import autoTable from 'jspdf-autotable';
 
-const API_URL = 'http://localhost:5000/api/vendors';
+const API_URL = 'https://procureflow-enterprise-vendor-management-e2a6.onrender.com//api/vendors';
 
 function VendorManagement() {
   const [vendors, setVendors] = useState([]);
@@ -40,7 +40,7 @@ const fetchVendors = async () => {
 const fetchPendingVendorAccounts = async () => {
   try {
     const res = await axios.get(
-      "http://localhost:5000/api/auth/vendors/pending"
+      "https://procureflow-enterprise-vendor-management-e2a6.onrender.com//api/auth/vendors/pending"
     );
 
     setPendingVendorAccounts(res.data);
@@ -51,7 +51,7 @@ const fetchPendingVendorAccounts = async () => {
 const approveVendorAccount = async (id) => {
   try {
     await axios.put(
-      `http://localhost:5000/api/auth/vendors/${id}/approve`
+      `https://procureflow-enterprise-vendor-management-e2a6.onrender.com//api/auth/vendors/${id}/approve`
     );
 
     alert("Vendor approved successfully!");
@@ -97,10 +97,10 @@ const handleSubmit = async (e) => {
     // Edit existing vendor
       console.log(
     "UPDATE URL:",
-    `http://localhost:5000/api/vendors/${editingVendor._id}`
+    `https://procureflow-enterprise-vendor-management-e2a6.onrender.com//api/vendors/${editingVendor._id}`
   );
     await axios.put(
-  `http://localhost:5000/api/vendors/${editingVendor._id}`,
+  `https://procureflow-enterprise-vendor-management-e2a6.onrender.com//api/vendors/${editingVendor._id}`,
   vendorData
 );
   } else {
@@ -148,7 +148,7 @@ const handleRejectClick = (vendor) => {
 };
 const updateStatus = async (id, status, rejectionReason = '') => {
   try {
-    await axios.put(`http://localhost:5000/api/vendors/${id}/status`, {
+    await axios.put(`https://procureflow-enterprise-vendor-management-e2a6.onrender.com//api/vendors/${id}/status`, {
       status,
       rejectionReason,
     });
@@ -186,7 +186,7 @@ const handleDelete = async (id) => {
   if (!confirmDelete) return;
 
   try {
-    await axios.delete(`http://localhost:5000/api/vendors/${id}`);
+    await axios.delete(`https://procureflow-enterprise-vendor-management-e2a6.onrender.com//api/vendors/${id}`);
     fetchVendors();
   } catch (error) {
     console.error(error);
@@ -196,7 +196,7 @@ const handleDelete = async (id) => {
 
 const updateRating = async (id, rating) => {
   try {
-    await axios.put(`http://localhost:5000/api/vendors/${id}/rating`, {
+    await axios.put(`https://procureflow-enterprise-vendor-management-e2a6.onrender.com//api/vendors/${id}/rating`, {
       rating,
     });
 

@@ -26,8 +26,8 @@ import {
   Cell,
 } from "recharts";
 
-const STATS_API = "http://localhost:5000/api/vendors/stats";
-const PO_API = 'http://localhost:5000/api/purchase-orders';
+const STATS_API = "https://procureflow-enterprise-vendor-management-e2a6.onrender.com//api/vendors/stats";
+const PO_API = 'https://procureflow-enterprise-vendor-management-e2a6.onrender.com//api/purchase-orders';
 
 function Dashboard() {
   const [stats, setStats] = useState({

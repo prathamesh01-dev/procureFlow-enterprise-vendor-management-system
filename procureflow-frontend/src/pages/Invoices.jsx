@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const API_URL = 'http://localhost:5000/api/invoices';
+const API_URL = 'https://procureflow-enterprise-vendor-management-e2a6.onrender.com//api/invoices';
 
 function Invoices() {
   const [invoices, setInvoices] = useState([]);

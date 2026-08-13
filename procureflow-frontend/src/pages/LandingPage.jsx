@@ -192,7 +192,7 @@ function LandingPage() {
     };
 
     try {
-      const response = await fetch('http://localhost:5000/api/contact/send', {
+      const response = await fetch('https://procureflow-enterprise-vendor-management-e2a6.onrender.com//api/contact/send', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const API_URL = 'http://localhost:5000/api/purchase-orders';
+const API_URL = 'https://procureflow-enterprise-vendor-management-e2a6.onrender.com//api/purchase-orders';
 
 function PurchaseOrders() {
   const [orders, setOrders] = useState([]);
@@ -32,7 +32,7 @@ function PurchaseOrders() {
 
   const fetchVendors = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/vendors');
+      const res = await axios.get('https://procureflow-enterprise-vendor-management-e2a6.onrender.com//api/vendors');
       const approved = res.data.filter((v) => v.status === 'Approved');
       setVendors(approved);
     } catch (error) {
@@ -81,7 +81,7 @@ function PurchaseOrders() {
   const updateOrderStatus = async (id, status) => {
     try {
       await axios.put(
-        `http://localhost:5000/api/purchase-orders/${id}/status`,
+        `https://procureflow-enterprise-vendor-management-e2a6.onrender.com//api/purchase-orders/${id}/status`,
         { status }
       );
 
@@ -94,7 +94,7 @@ function PurchaseOrders() {
 
   const generateInvoice = async (order) => {
     try {
-      await axios.post('http://localhost:5000/api/invoices', {
+      await axios.post('https://procureflow-enterprise-vendor-management-e2a6.onrender.com//api/invoices', {
         invoiceNumber: `INV-${Date.now()}`,
         purchaseOrder: order._id,
         vendor: order.vendor?._id,
